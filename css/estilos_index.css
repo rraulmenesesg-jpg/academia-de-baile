@@ -23,7 +23,7 @@ body {
 header {
     height: 100vh; 
     background: linear-gradient(rgba(31, 84, 2, 0.8), rgba(31, 84, 2, 1.800)), 
-    url('../assets/img/index/fd_logo.png') center/cover no-repeat; 
+    url('') center/cover no-repeat; 
     display: flex; 
     align-items: center; 
     justify-content: center; 
