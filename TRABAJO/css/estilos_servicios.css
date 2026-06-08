@@ -1,0 +1,376 @@
+
+:root {
+    --color-primary: #8a2be2; /* Púrpura/Lila para botones */
+    --color-text-dark: #333;
+    --color-text-light: #666;
+    --color-background-light: #f5f5f5; /* Fondo general */
+    --color-card-bg-light: #fff;
+    --color-card-bg-dark: #e8e8e8;
+    --color-booking-bg: #e0eee0; /* Verde pálido para el fondo de reserva */
+    --color-pink-bg: #f5e0e0; /* Rosa pálido para el fondo de 'Sobre la marca' */
+    --color-price: #333;
+}
+
+/* Base y Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    background-color: var(--color-background-light);
+}
+
+h2 {
+    font-size: 2.5em;
+    font-weight: 300;
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text-dark);
+}
+
+/* Estilo de Botones Generales */
+button {
+    cursor: pointer;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* -------------------------------------- */
+/* SECCIÓN DE PRECIOS */
+/* -------------------------------------- */
+
+h2{
+    text-align: center;
+}
+
+.pricing-section {
+    padding: 80px 5%;
+    background-color: var(--color-card-bg-dark); /* Fondo de la sección de */
+}
+
+.pricing-card-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    flex: 1;
+    max-width: 380px;
+    background-color: var(--color-card-bg-light);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.card-image {
+    height: 300px; /* Altura de la imagen */
+    background-color: #dcdcdc; /* Color de placeholder para las imágenes */
+    /* Las imágenes reales se establecerían con <img> o background-image */
+}
+/* Estilos específicos de imagen de tarjeta para placeholder */
+.card-basic .card-image { background-color: #e5e4e2; } /* Gris pálido */
+.card-intermedio .card-image { background-color: #e0e0e0; } /* Gris más oscuro */
+.card-avanzado .card-image { background-color: #d3d3d3; } /* Gris claro */
+
+.card-content {
+    padding: 30px;
+    text-align: left;
+}
+
+.card-content h3 {
+    margin-bottom: 5px;
+}
+
+.card-content .price {
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--color-price);
+    margin-bottom: 15px;
+}
+
+.card-content .description {
+    color: var(--color-text-light);
+    font-size: 0.95em;
+    line-height: 1.8;
+}
+
+/* -------------------------------------- */
+/* SECCIÓN DE CITAS Y RESERVAS */
+/* -------------------------------------- */
+
+.booking-section {
+    display: flex;
+    min-height: 75vh;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.booking-left {
+    flex: 1;
+    padding: 100px 5% 50px 5%;
+    background-color: var(--color-card-bg-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.booking-left h2 {
+    font-size: 3.5em;
+    margin-top: 0;
+}
+
+.booking-left p {
+    max-width: 80%;
+    margin-bottom: 40px;
+    line-height: 1.7;
+    color: var(--color-text-light);
+}
+
+.cosmetics-image {
+    width: 100%;
+    min-height: 300px;
+    background-color: var(--color-pink-bg); /* Placeholder de la imagen **/
+}
+
+.booking-right {
+    flex: 1;
+    padding: 100px 5%;
+    background-color: var(--color-booking-bg);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.booking-card {
+    width: 100%;
+    max-width: 450px;
+    background-color: var(--color-card-bg-light);
+    padding: 30px;
+    border-radius: 0; /* Sin bordes redondeados */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.booking-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+.booking-header h3 {
+    font-size: 1.3em;
+}
+
+.user-actions a {
+    font-size: 0.8em;
+    color: var(--color-text-light);
+    font-weight: 500;
+}
+
+.service-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.service-item p {
+    font-weight: 500;
+}
+
+.service-item .duration {
+    grid-column: 1 / 2;
+    font-size: 0.9em;
+    color: var(--color-text-light);
+    margin-top: -15px; /* Ajuste para que se vea más pegado al nombre del servicio */
+}
+
+.reserve-btn {
+    grid-column: 2 / 3;
+    padding: 10px 15px;
+    background-color: var(--color-primary);
+    color: white;
+    font-size: 0.8em;
+    border-radius: 0;
+}
+
+.powered-by {
+    text-align: center;
+    padding-top: 20px;
+    color: var(--color-text-light);
+    font-size: 0.8em;
+}
+
+.powered-by .acuity {
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* -------------------------------------- */
+/* SECCIÓN SOBRE NUESTRA MARCA */
+/* -------------------------------------- */
+
+.about-section {
+    display: flex;
+    min-height: 70vh;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.about-image {
+    flex: 1;
+    background-color: var(--color-pink-bg); /* Placeholder de la imagen */
+}
+
+.about-content {
+    flex: 1;
+    padding: 100px 5% 50px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.about-content h2 {
+    font-size: 3.5em;
+}
+
+.about-content p {
+    max-width: 80%;
+    margin-bottom: 30px;
+    line-height: 1.7;
+    color: var(--color-text-light);
+}
+
+.read-more-btn {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 15px 40px;
+    border-radius: 30px;
+}
+
+/* -------------------------------------- */
+/* PIE DE PÁGINA Y REDES SOCIALES */
+/* -------------------------------------- */
+.site-footer {
+    background-color: var(--color-card-bg-light);
+}
+
+
+.footer-bottom {
+    background-color: #000;
+    color: white;
+    padding: 40px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.site-info h3 {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.site-info p, .contact-info p {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.site-info a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: underline;
+}
+
+.contact-info {
+    display: flex;
+    gap: 80px;
+}
+
+.contact-info h4 {
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: white;
+}
+
+/* -------------------------------------- */
+/* MEDIA QUERIES PARA RESPONSIVE */
+/* -------------------------------------- */
+
+@media (max-width: 1024px) {
+    .pricing-card-container {
+        flex-wrap: wrap;
+    }
+
+    .pricing-card {
+        flex-basis: 45%;
+    }
+
+    .booking-section, .about-section {
+        flex-direction: column;
+    }
+
+    .about-content, .booking-left {
+        padding: 50px 5%;
+    }
+
+    .booking-right {
+        padding: 50px 5%;
+        background-color: var(--color-card-bg-light); /* En móvil, fondo blanco para mantener coherencia */
+    }
+    .booking-card {
+        background-color: var(--color-booking-bg); /* En móvil, la tarjeta toma el color del fondo original */
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .contact-info {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing-card {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+    .booking-left h2, .about-content h2 {
+        font-size: 2.5em;
+    }
+}
+
+

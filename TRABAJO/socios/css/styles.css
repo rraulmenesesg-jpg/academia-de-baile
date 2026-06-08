@@ -1,0 +1,317 @@
+/* =============================================
+   STYLES.CSS - FUNNY DANCE ACADEMY
+   Versión unificada - Febrero 2026
+   Azul Oscuro + Turquesa | Moderno y Elegante
+   ============================================= */
+
+:root {
+  --azul-oscuro: #0f172a;
+  --azul-principal: #1e3a8a;
+  --turquesa: #00f5d4;
+  --turquesa-oscuro: #00b39a;
+  --gris-claro: #f8fafc;
+  --texto: #e2e8f0;
+  --texto-secundario: #94a3b8;
+  --blanco: #ffffff;
+  --sombra: 0 10px 30px rgba(0, 245, 212, 0.15);
+  --radius: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--azul-oscuro);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+/* ====================== HEADER ====================== */
+header {
+  background: var(--azul-principal);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+}
+
+/* ====================== HORARIO GRID ====================== */
+/* ====================== HORARIO GRID - Versión FINAL RESPONSIVA ====================== */
+
+.horario {
+  display: grid;
+  grid-template-columns: 150px repeat(5, minmax(150px, 1fr)); /* escritorio: columnas anchas */
+  gap: 16px;
+  padding: 30px;
+  background: rgba(15, 23, 42, 0.75);
+  border-radius: 20px;
+  margin: 30px auto;
+  max-width: 1000%;
+  box-shadow: 0 20px 60px rgba(0, 245, 212, 0.12);
+  
+  /* Clave para móvil: siempre permite scroll horizontal */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #00f5d4 #1f2937;
+}
+
+
+/* Días y horas */
+.dia, .hora {
+  background: linear-gradient(135deg, #1e3a8a, #0f172a);
+  color: white;
+  font-weight: 70;
+  font-size: 1rem;
+  padding: 16px 12px;
+  border-radius: 12px;
+  text-align: center;
+  min-height: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Celdas */
+.celda {
+  background: rgba(255,255,255,0.92);
+  border: 2px dashed #64748b;
+  border-radius: 16px;
+  padding: 16px;
+  min-height: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1rem;
+  color: #1e293b;
+}
+
+.celda:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 245, 212, 0.25);
+  border-color: #00f5d4;
+  background: rgba(255,255,255,0.98);
+}
+
+.celda.has-event {
+  background: linear-gradient(135deg, #e0f2fe, #dbeafe);
+  border: 2px solid #00b39a;
+}
+
+.celda strong {
+  font-size: 1.15rem;
+  color: #1e40af;
+  margin-bottom: 8px;
+}
+
+.celda small {
+  color: #475569;
+  font-size: 0.92rem;
+}
+/* ====================== MODAL ====================== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  width: 90%;
+  max-width: 520px;
+  border-radius: var(--radius);
+  padding: 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: modalPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalPop {
+  from { transform: scale(0.7) translateY(50px); opacity: 0; }
+  to { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.modal-content h2 {
+  color: var(--azul-principal);
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.modal-content label {
+  display: block;
+  margin: 15px 0 6px;
+  font-weight: 600;
+  color: var(--azul-oscuro);
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.modal-content input:focus,
+.modal-content select:focus,
+.modal-content textarea:focus {
+  outline: none;
+  border-color: var(--turquesa);
+  box-shadow: 0 0 0 3px rgba(0, 245, 212, 0.15);
+}
+
+/* ====================== BOTONES ====================== */
+button {
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1rem;
+}
+
+.login-btn,
+.btn-primary {
+  background: linear-gradient(135deg, var(--turquesa), #00b39a);
+  color: var(--azul-oscuro);
+  font-size: 1.1rem;
+  padding: 16px 40px;
+  width: 100%;
+}
+
+.btn-primary:hover,
+.login-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 245, 212, 0.4);
+}
+
+.btn-nuevo {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 65px;
+  height: 65px;
+  background: var(--turquesa);
+  color: var(--azul-oscuro);
+  font-size: 36px;
+  border-radius: 50%;
+  box-shadow: 0 8px 30px rgba(0, 245, 212, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: all 0.3s;
+}
+
+.btn-nuevo:hover {
+  transform: scale(1.1) rotate(90deg);
+}
+
+/* ====================== LOGIN ====================== */
+.background-radial {
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #1e3a8a 0%, #0f172a 80%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-card {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 50px 40px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.avatar-container {
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(135deg, var(--turquesa), #00b39a);
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  color: var(--azul-oscuro);
+  box-shadow: var(--sombra);
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group .icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  color: var(--turquesa-oscuro);
+}
+
+.input-group input {
+  width: 100%;
+  padding: 16px 20px 16px 54px;
+  border: 2px solid #e2e8f0;
+  border-radius: 14px;
+  font-size: 1.05rem;
+}
+
+.input-group input:focus {
+  border-color: var(--turquesa);
+}
+
+/* ====================== RESPONSIVE ====================== */
+
+/* Móviles (scroll horizontal obligatorio + ajuste) */
+@media (max-width: 768px) {
+  .horario {
+    grid-template-columns: 120px repeat(5, minmax(140px, 1fr)); /* columnas mínimas legibles */
+    gap: 10px;
+    padding: 15px;
+    overflow-x: auto;
+  }
+  .dia, .hora {
+    font-size: 0.95rem;
+    padding: 12px;
+    min-height: 60px;
+  }
+  .celda {
+    min-height: 60px;
+    font-size: 0.92rem;
+    padding: 12px;
+  }
+  .celda strong {
+    font-size: 1rem;
+  }
+}
