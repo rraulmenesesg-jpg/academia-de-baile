@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+    <html lang="en-mx">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>FUNNY DANCE ACADEMY</title>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <script src="socios/js/supabase.js"></script>           <!-- ← cambia a "../js/supabase.js" o "socios/js/supabase.js" si hace falta -->
+        <script src="socios/js/clases-publico.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/estilos_index.css">
+        <link rel="stylesheet" href="css/estlios_clases.css">
+        <link rel="icon" type="image/png" href="assets/img/logo_meta/FN LOJO.jpeg">
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-azul">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <p class="textheader">Funny Dance</p>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav text-uppercase" style="font-size: 0.85rem; font-weight: 600;">
+                    <li class="nav-item">
+                    <a  class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" class="nav-link" href="clases.html">clases</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="Nuestro_Trabajo.html">Nuestro Trabajo</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="Servicios_danza.html">Servicios de danza</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="socios/pages/login.html">horarios</a>
+                    </li>      
+                </ul> 
+                </div>
+            </div>
+        </nav>
+
+<div class="horario" >
+    <!-- Fila 1: Encabezados -->
+    <div class="celda" onclick="scrollToSede('sede-info')">Mas sobre las clases</div>              <!-- esquina superior izquierda -->
+    <div class="dia">Lunes</div>
+    <div class="dia">Martes</div>
+    <div class="dia">Miércoles</div>
+    <div class="dia">Jueves</div>
+    <div class="dia">Viernes</div>
+
+    <!-- Fila 2: Horario 1:00 - 2:30 -->
+    <div class="hora">1:00 - 2:30</div>
+    <div class="celda" id="lunes_1300"></div>
+    <div class="celda" id="martes_1300"></div>
+    <div class="celda" id="miercoles_1300"></div>
+    <div class="celda" id="jueves_1300"></div>
+    <div class="celda" id="viernes_1300"></div>
+
+    <!-- Fila 3: Horario 2:30 - 4:00 -->
+    <div class="hora">2:30 - 4:00</div>
+    <div class="celda" id="lunes_1430"></div>
+    <div class="celda" id="martes_1430"></div>
+    <div class="celda" id="miercoles_1430"></div>
+    <div class="celda" id="jueves_1430"></div>
+    <div class="celda" id="viernes_1430"></div>
+
+    <!-- Fila 4: Horario 4:00 - 5:30 -->
+    <div class="hora">4:00 - 5:30</div>
+    <div class="celda" id="lunes_1600" onclick="scrollToSede('sede-axa')">F.D. kits</div>
+    <div class="celda" id="martes_1600" onclick="scrollToSede('sede-sma')">F.D. sede Santa Maria</div>
+    <div class="celda" id="miercoles_1600" onclick="scrollToSede('sede-axa')">F.D. kits</div>
+    <div class="celda" id="jueves_1600" onclick="scrollToSede('sede-sma')">F.D. sede Santa Maria</div>
+    <div class="celda" id="viernes_1600" onclick="scrollToSede('sede-axa')">F.D. kits</div>
+
+    <!-- Fila 5: Horario 5:30 - 7:00 -->
+    <div class="hora">5:30 - 7:00</div>
+    <div class="celda" id="lunes_1730" onclick="scrollToSede('sede-axa')">F.D. sede Axapusco</div>
+    <div class="celda" id="martes_1730" onclick="scrollToSede('sede-otm')">F.D. sede Otumba</div>
+    <div class="celda" id="miercoles_1730" onclick="scrollToSede('sede-axa')">F.D. sede Axapusco</div>
+    <div class="celda" id="jueves_1730" onclick="scrollToSede('sede-otm')">F.D. sede Otumba</div>
+    <div class="celda" id="viernes_1730" onclick="scrollToSede('sede-axa')">F.D. sede Axapusco</div>
+
+    <!-- Fila 6: Horario 7:00 - 8:30 -->
+    <div class="hora">7:00 - 8:30</div>
+    <div class="celda" id="lunes_1900"></div>
+    <div class="celda" id="martes_1900"></div>
+    <div class="celda" id="miercoles_1900"></div>
+    <div class="celda" id="jueves_1900"></div>
+    <div class="celda" id="viernes_1900"></div>
+
+    <!-- Fila 7: Horario 8:30 - 9:30 -->
+    <div class="hora">8:30 - 9:30</div>
+    <div class="celda" id="lunes_2030"></div>
+    <div class="celda" id="martes_2030"></div>
+    <div class="celda" id="miercoles_2030"></div>
+    <div class="celda" id="jueves_2030"></div>
+    <div class="celda" id="viernes_2030"></div>
+</div>
+
+<div id="sedes">
+    <h3 class="div-sedes">ver las sedes</h3>
+    <nav class="sedes-nav" id="sedes-nav">
+        <button onclick="scrollToSede('sede-axa')" class="active">Axapusco</button>
+        <button onclick="scrollToSede('sede-sma')">Santa Maria</button>
+        <button onclick="scrollToSede('sede-otm')">Otumba</button>
+        <button onclick="scrollToSede('sede-info')">Mas sobre las clases</button>
+    </nav>
+
+    <div class="sedes-container">
+        <section id="sede-axa" class="sede-card">
+            <div class="sede-header">
+                <h1>Axapusco (Principal)</h1>
+                <p>C. de Constituyentes 477, 55940 Axapusco, Méx.</p>
+            </div>
+            <div class="sede-body">
+                <div class="map-placeholder"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d886.2091008149762!2d-98.75069291314973!3d19.72865930502201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1c100522804a3%3A0x1d457c7ee98c995b!2sFunny%20Dance%20Academy!5e0!3m2!1ses-419!2smx!4v1771645637148!5m2!1ses-419!2smx" width="1100" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+            </div>
+        </section>
+
+        <section id="sede-sma" class="sede-card">
+            <div class="sede-header">
+                <h1>Sanat Maria Actipac</h1>
+                <p>Cancún, Huilotongo, 55952 Santa María Actipac, Méx.</p>
+            </div>
+            <div class="sede-body">
+                <div class="map-placeholder"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1687.817110350818!2d-98.74790897391944!3d19.8518273198107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1771645949761!5m2!1ses-419!2smx" width="1100" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+            </div>
+        </section>
+
+        <section id="sede-otm" class="sede-card">
+            <div class="sede-header">
+                <h1>Otumba</h1>
+                <p>Av. Constitución 789, Centro</p>
+            </div>
+            <div class="sede-body">
+                <!-- contenido similar -->
+                <div class="map-placeholder"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d234.76926541627935!2d-98.75817263254092!3d19.699496500000013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1c0d01eed4c89%3A0x4359a36030cdf252!2sPlaza%20D%20Pilar!5e0!3m2!1ses-419!2smx!4v1771646041093!5m2!1ses-419!2smx" width="1100" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+            </div>
+        </section>
+
+        <section id="sede-info" class="sede-card">
+            <div class="sede-header">
+                <h1>Mas Sobre las Clases</h1>
+            </div>
+            <div class="sede-body">
+
+                <div class="caracteristica-card">
+                    <div class="caracteristica-icono">💵</div>
+                    <h3>costos</h3>
+                    <p>los costos de las clases son variados cuando hay maestros invitados:
+                        <br>clase kits: 30 MXN
+                        <br>clase intermedio: 35 MXN
+                        <br>clase maestro invitado: +40 MXN
+                    </p>
+                </div>
+                <div class="caracteristica-card">
+                    <div class="caracteristica-icono">👶</div>
+                    <h3>clases para kits</h3>
+                    <p>las clases para kits solo se dan en la sede de Axapusxo, la edad para entarae es:
+                    <br>rango +5 á 13 años
+                    </p>
+                </div>
+
+                <div class="caracteristica-card">
+                    <div class="caracteristica-icono">🫡</div>
+                    <h3>clase Lvl basica</h3>
+                    <p>Estas clases son ideales para principientes.</p>
+                </div>
+
+                <div class="caracteristica-card">
+                    <div class="caracteristica-icono">😎</div>
+                    <h3>clase Lvl intermedio</h3>
+                    <p>Clase mas de rutina, perfecta si ya tines un recorido en el mundo de la danza y buscas mejora mas.</p>
+                </div>
+
+                <div class="caracteristica-card">
+                    <div class="caracteristica-icono">😄</div>
+                    <h3>Clases de Rutina</h3>
+                    <p> Clases perfecta para ir a mover el cuerpo y entrenar, Estas clases normalmete se consentra en los dias entre semana excluyendo viernes.</p>
+                </div>
+
+                <div class="caracteristica-card">
+                    <div class="caracteristica-icono">🤑</div>
+                    <h3>Clases de Montaje</h3>
+                    <p>Estas clases son para aquellos bailarines que quieran formar parte de la academia, son clases que normalmente se montan corigrafia para eventos sociales bormalmente se hacen los dias viernes.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <div class="site-info">
+                <h3>FUNNY DANCE ACADEMY</h3>
+                <img src="assets/img/logo_meta/fd_logo.png" height="100" width="100">
+            </div>
+            <div class="contact-info">
+                <div class="info-group">
+                    <h4>Ubicación</h4>
+                    <p>Calle de ejemplo, 123</p>
+                    <p>Nueva York, NY 12345</p>
+                </div>
+                <div class="info-group">
+                    <h4>Contacto</h4>
+                    <p>correo@ejemplo.com</p>
+                    <p>(555) 555-5555</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    </body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/scrips.js"></script>
+    </html>

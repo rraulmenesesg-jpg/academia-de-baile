@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="assets/ICON.png">
+  <title>Registro</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div class="background-radial">
+    <div class="login-card">
+      <div class="avatar-container">
+        <div class="avatar-icon">✍️</div>
+      </div>
+
+      <h2>CREATE ACCOUNT</h2>
+
+      <form
+        id="registerForm"
+        onsubmit="event.preventDefault(); register(email.value, password.value);"
+      >
+        <div class="input-group">
+          <span class="icon">📧</span>
+          <input id="email" type="email" placeholder="Email" autocomplete="email" required>
+        </div>
+
+        <div class="input-group">
+          <span class="icon">🔒</span>
+          <input id="password" type="password" placeholder="New Password" autocomplete="new-password" required>
+        </div>
+
+        <button type="submit" class="login-btn">Register</button>
+      </form>
+
+      <div class="footer-link">
+        <p style="color: white; font-size: 13px; margin-top: 20px;">
+          ¿Ya tienes cuenta? <a href="login.html" style="font-weight: bold;">Inicia Sesión</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Tu inicialización -->
+  <script src="./js/supabase.js"></script>
+
+  <!-- Lógica de auth -->
+  <script src="./js/auth.js"></script>
+</body>
+
+</html>
